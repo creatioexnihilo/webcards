@@ -1,0 +1,5 @@
+flask-wtf
+flask
+itsdangerous
+wtforms
+Pillow
