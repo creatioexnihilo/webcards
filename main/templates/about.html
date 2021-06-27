@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %} About {% endblock %}
+{% block style %}<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">{% endblock %}
+
+{% block nohome %}<div class="p-2 bd-highlight">{% endblock %}
+
+{% block nohome2 %}</div>{% endblock %}
+
+{% block main %}
+        <div class="p-2 bd-highlight">
+       <div class="vectorial">
+        <h5>About</h5>
+        <p>With this tool you can create your own bussiness card.</p>
+        <h5>How to use</h5>
+        <p>Complete the form, then submit. If you are redirected to the same page try to enter other texts or to upload other photos. You can use PNG or JPG files. Note that PNG are higher quality. Also hover over the input labels to learn about input limits.</p>
+        <h5>Expected output</h5>
+        <p>If everything is done right you should be redirected to a page where is the final image. Here you can download it. The image is resized 340x189 pixels, that is roughly 9x5 centimeters(340.16x188.98 pixels).</p>
+        <p>Afterwards you can print your bussiness card.</p>
+               
+
+       </div>
+        
+        </div>
+
+   
+
+
+{% endblock %}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" media="all" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/form.css') }}">
+	<link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon" />
+
+
+	<title>Form</title>
+</head>
+<body>
+<div class="container center">
+	<h2>Bussiness card form</h2>
+
+	<form action="/form" method="POST" enctype="multipart/form-data">
+  		<div class="form-group">
+    		<p>
+				<span title="Max 20 characters" class="bigtext">{{form.firstname.label}}</span><br>
+				{{form.firstname(maxlength=20,size=30,required='required')}}
+				<span class="required">*</span>
+			</p>
+    		
+  		</div>
+  		<div class="form-group">
+   			<p>
+				<span title="Max 20 characters" class="bigtext">{{form.lastname.label}}</span><br>
+				{{form.lastname(maxlength=20,size=30,required='required')}}
+				<span class="required">*</span>
+			</p>
+  		</div>
+  		<div class="form-group">
+   			<p>
+				<span title="Max 25 characters" class="bigtext">{{form.email.label}}</span><br>
+				{{form.email(maxlength=25,size=30,required='required')}}
+				<span class="required">*</span>
+			</p>
+  		</div>
+
+  		<div class="form-group">
+    		<label title="Color" class="bigtext">Select Text Color</label>
+    		<input type="color" value="#ff0000" name="color_pick">
+  		</div>
+
+
+  		<div class="form-group">
+    		<label class="bigtext" title="Phone number" >Put a phone number</label><br>
+    		<input maxlength="10" type="tel" id="phone" name="phone"pattern="[0-9]{10}"required>
+    		<span class="required">*</span>
+  		</div>
+
+
+  		<div class="form-group">
+    		<label class="bigtext" size="30" data-toggle="tooltip" title="Max 20 characters">Occupation</label><br>
+    		<input maxlength="20", type="text" id="occupation" name="occupation" required>
+    		<span class="required">*</span>
+  		</div>
+  		
+
+  		
+
+  		<div class="form-group">
+          <label class="bigtext" title="Use PNG for best results">Select background image</label><span class="required">*</span>
+          <div class="custom-file">
+		  <!-- name= "image" e important -->
+            <input type="file" class="custom-file-input" name="image" id="image" oninput="filesize(this)">
+            <label class="custom-file-label" for="image">Select image...</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="bigtext" title="Use PNG for best results">Select profile image</label><span class="required">*</span>
+          <div class="custom-file">
+		  <!-- name= "image" e important -->
+            <input type="file" class="custom-file-input" name="face_image" id="face_image" oninput="size_of_profile(this)">
+            <label class="custom-file-label" for="image">Select image...</label>
+          </div>
+        </div>
+
+
+  	
+  		<button type="submit" class="btn btn-primary">Submit</button>
+  		<p><span class="required">*</span>-Fields marked with this, are required</p>
+	</form>
+</div>
+</body>
+
+
+<script>
+
+  function filesize(elem){
+    document.cookie = `filesize=${elem.files[0].size}`
+  }
+
+
+  function size_of_profile(elem){
+  	document.cookie=`size_of_profile=${elem.files[0].size}`
+  }
+
+</script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
