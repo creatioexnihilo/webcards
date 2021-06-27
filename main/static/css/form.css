@@ -1,0 +1,37 @@
+body{
+	background-color: #2d283e
+}
+
+h2{
+	color:blue;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  background-color:white;
+  border: 3px solid #802bb1;
+  padding: 10px;
+}
+
+@media screen and (max-width: 600px){
+  .center{
+    width: 100%;
+
+  }
+
+}
+
+.bigtext{
+
+  color: #445686;
+  font-weight: bold;
+
+
+}
+
+.required{
+  font-weight: bold;
+  color: red;
+}
+
